@@ -56,16 +56,15 @@ func init() {
 				cond = cond.And().Date().LowerOrEqual(rs.Env().Context().GetDate("to_date"))
 			}
 			accountDebit := h.AccountAnalyticLine().Search(rs.Env(), cond.And().Amount().Lower(0)).
-				GroupBy(h.AccountAnalyticLine().Account()).Aggregates(h.AccountAnalyticLine().Amount())
-			debit := accountDebit[0].Values.Amount
+				GroupBy(q.AccountAnalyticLine().Account()).Aggregates(q.AccountAnalyticLine().Amount())
+			debit := accountDebit[0].Values.Amount()
 			accountCredit := h.AccountAnalyticLine().Search(rs.Env(), cond.And().Amount().GreaterOrEqual(0)).
-				GroupBy(h.AccountAnalyticLine().Account()).Aggregates(h.AccountAnalyticLine().Amount())
-			credit := accountCredit[0].Values.Amount
-			return &h.AccountAnalyticAccountData{
-				Debit:   debit,
-				Credit:  credit,
-				Balance: credit - debit,
-			}
+				GroupBy(q.AccountAnalyticLine().Account()).Aggregates(q.AccountAnalyticLine().Amount())
+			credit := accountCredit[0].Values.Amount()
+			return h.AccountAnalyticAccount().NewData().
+				SetDebit(debit).
+				SetCredit(credit).
+				SetBalance(credit - debit)
 		})
 
 	h.AccountAnalyticAccount().Methods().NameGet().Extend("",
