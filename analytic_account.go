@@ -10,6 +10,7 @@ import (
 	"github.com/hexya-erp/hexya/src/models/operator"
 	"github.com/hexya-erp/hexya/src/models/types/dates"
 	"github.com/hexya-erp/pool/h"
+	"github.com/hexya-erp/pool/m"
 	"github.com/hexya-erp/pool/q"
 )
 
@@ -47,7 +48,7 @@ func init() {
 
 	h.AccountAnalyticAccount().Methods().ComputeDebitCreditBalance().DeclareMethod(
 		`ComputeDebitCreditBalance`,
-		func(rs h.AccountAnalyticAccountSet) *h.AccountAnalyticAccountData {
+		func(rs m.AccountAnalyticAccountSet) m.AccountAnalyticAccountData {
 			cond := q.AccountAnalyticLine().Account().Equals(rs)
 			if rs.Env().Context().HasKey("from_date") {
 				cond = cond.And().Date().GreaterOrEqual(rs.Env().Context().GetDate("from_date"))
@@ -57,10 +58,10 @@ func init() {
 			}
 			accountDebit := h.AccountAnalyticLine().Search(rs.Env(), cond.And().Amount().Lower(0)).
 				GroupBy(q.AccountAnalyticLine().Account()).Aggregates(q.AccountAnalyticLine().Amount())
-			debit := accountDebit[0].Values.Amount()
+			debit := accountDebit[0].Values().Amount()
 			accountCredit := h.AccountAnalyticLine().Search(rs.Env(), cond.And().Amount().GreaterOrEqual(0)).
 				GroupBy(q.AccountAnalyticLine().Account()).Aggregates(q.AccountAnalyticLine().Amount())
-			credit := accountCredit[0].Values.Amount()
+			credit := accountCredit[0].Values().Amount()
 			return h.AccountAnalyticAccount().NewData().
 				SetDebit(debit).
 				SetCredit(credit).
@@ -68,7 +69,7 @@ func init() {
 		})
 
 	h.AccountAnalyticAccount().Methods().NameGet().Extend("",
-		func(rs h.AccountAnalyticAccountSet) string {
+		func(rs m.AccountAnalyticAccountSet) string {
 			name := rs.Name()
 			if rs.Code() != "" {
 				name = fmt.Sprintf("[%s] %s", rs.Code(), rs.Name())
@@ -80,7 +81,7 @@ func init() {
 		})
 
 	h.AccountAnalyticAccount().Methods().SearchByName().Extend("",
-		func(rs h.AccountAnalyticAccountSet, name string, op operator.Operator, additionalCond q.AccountAnalyticAccountCondition, limit int) h.AccountAnalyticAccountSet {
+		func(rs m.AccountAnalyticAccountSet, name string, op operator.Operator, additionalCond q.AccountAnalyticAccountCondition, limit int) m.AccountAnalyticAccountSet {
 			if !op.IsPositive() {
 				return rs.Super().SearchByName(name, op, additionalCond, limit)
 			}
