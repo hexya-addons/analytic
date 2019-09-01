@@ -6,6 +6,7 @@ github.com/beevik/etree v1.1.0/go.mod h1:r8Aw8JqVegEf0w2fDnATrX9VpkMcyFeM0FhwO62
 github.com/boj/redistore v0.0.0-20180917114910-cd5dcc76aeff/go.mod h1:+RTT1BOk5P97fT2CiHkbFQwkK3mjsFAP6zCYV2aXtjw=
 github.com/bradfitz/gomemcache v0.0.0-20180710155616-bc664df96737/go.mod h1:PmM6Mmwb0LSuEubjR8N7PtNe1KxZLtOUHtbeikc5h60=
 github.com/bradleypeabody/gorilla-sessions-memcache v0.0.0-20181103040241-659414f458e1/go.mod h1:dkChI7Tbtx7H1Tj7TqGSZMOeGpMP5gLHtjroHd4agiI=
+github.com/cockroachdb/apd/v2 v2.0.1/go.mod h1:DDxRlzC2lo3/vSlmSoS7JkqbbrARPuFOGr0B9pvN3Gw=
 github.com/coreos/etcd v3.3.10+incompatible/go.mod h1:uF7uidLiAD3TWHmW31ZFd/JWoc32PjwdhPthX9715RE=
 github.com/coreos/go-etcd v2.0.0+incompatible/go.mod h1:Jez6KQU2B/sWsbdaef3ED8NzMklzPG4d5KIOhIy30Tk=
 github.com/coreos/go-semver v0.2.0/go.mod h1:nnelYz7RCh+5ahJtPPxZlU+153eP4D4r3EedlOD2RNk=
@@ -53,6 +54,7 @@ github.com/hexya-addons/base v0.0.14/go.mod h1:58zuCja1OsJVEWtZ1RdK/E0kumD5FEpuW
 github.com/hexya-addons/base v0.0.18 h1:laKa6jK/BGr5lxH1pO2ypY+9p1MD3ZB/QVTLQZgtimI=
 github.com/hexya-addons/base v0.0.18/go.mod h1:+DfJEmX0LBVBhdMFzZdrwcuVFC9aeRiuyAHVnVDO3vM=
 github.com/hexya-addons/base v0.0.22/go.mod h1:AaMC2HZqYmkYlO03nsyIr2V5LEopXmAMVAS3LBz7/ZM=
+github.com/hexya-addons/base v0.0.27/go.mod h1:QzFaDXA4BCVMx/DRWzH8FEjyQ30KlmSVzgj7DTyOcJs=
 github.com/hexya-addons/decimalPrecision v0.0.14 h1:dkqPcx0UHRyYKRQhbJYDUqpdycpfEAlFDRJADtdpqOA=
 github.com/hexya-addons/decimalPrecision v0.0.14/go.mod h1:owyvkJLnciYKC5TYlNCCXpVWZPmuGoGd00V291X56xc=
 github.com/hexya-addons/decimalPrecision v0.0.23/go.mod h1:KamZwaz1LGdhGiwQhReLByC3/9dLDhmfxI1iMdhYMyw=
@@ -60,11 +62,13 @@ github.com/hexya-addons/product v0.0.20 h1:Pc5Ns4ssCUeVbj/AL5AYzSZKtOIQC9+Yv6nIN
 github.com/hexya-addons/product v0.0.20/go.mod h1:TktPe6FCYDnxKavnllQVf0Yw5sFsJw0+/tHS4UmH17k=
 github.com/hexya-addons/product v0.0.22/go.mod h1:vCVZna3ZHjaCHjzzcPSP4JoVN+4xA4cXuZXqwGoVMJM=
 github.com/hexya-addons/product v0.0.23/go.mod h1:uRsYOYL0QsofPsG7u4DlLkQtAZxy8TWd6N4dhJUNnPg=
+github.com/hexya-addons/product v0.0.27/go.mod h1:lkTWi0AyhssWgYgPhfnfrd3PXaA1f0ix/Egv3wiggxs=
 github.com/hexya-addons/web v0.0.14 h1:hyYeeQgstPLoSttFH0DzGescEo5R+nsEQ3FKrFmTHAg=
 github.com/hexya-addons/web v0.0.14/go.mod h1:8OW46+fvpPX+2crfwKkI3WD99KgE7yPOuPNs51pqXC8=
 github.com/hexya-addons/web v0.0.20 h1:/urLhMsu3c9m5p+ru/bU5Qu0Y6SjAYTlvCLZjQprczc=
 github.com/hexya-addons/web v0.0.20/go.mod h1:03MWC2GhkeoRWM9Ui7R2vXDRGs2OdRiKPBYxGiSVofo=
 github.com/hexya-addons/web v0.0.22/go.mod h1:In1yBkYkd14eA4KQZ6UCGBrMVSPzC7o/7Xjkt+D1UzI=
+github.com/hexya-addons/web v0.0.27/go.mod h1:X4AXimRApNKTIB4ZXoyrvy4dMttYK+Q/+kYtaNadTmM=
 github.com/hexya-addons/webKanban v0.0.14 h1:J9758G7EpNHKVd/cZ7T6Kd2aTsyL0sSFbO3QntP9FsA=
 github.com/hexya-addons/webKanban v0.0.14/go.mod h1:jYOdN21ZEpqbWbq9MrZkrqMRuB4ry8ZCqghhDlvKGMM=
 github.com/hexya-addons/webKanban v0.0.22/go.mod h1:cn51KJAgtajrapm5QzGUzXZ9Ytj2zRoP7FnymXU2SDY=
@@ -75,6 +79,7 @@ github.com/hexya-erp/hexya v0.0.20 h1:dRy8X9AlOWhoTaWHrk4Utc3CfIxhgCkkmlN6z/Hmsy
 github.com/hexya-erp/hexya v0.0.20/go.mod h1:G2nZwsXlhyieFbgJ5ZrNohYAG0c1+wST6aN9zQO5Wjg=
 github.com/hexya-erp/hexya v0.0.22/go.mod h1:8jeQ0qY7fJLfnabcxVM0sQO8NhSlJxrO4ugL+LMEytg=
 github.com/hexya-erp/hexya v0.0.23/go.mod h1:8jeQ0qY7fJLfnabcxVM0sQO8NhSlJxrO4ugL+LMEytg=
+github.com/hexya-erp/hexya v0.0.27/go.mod h1:xlghkJ3Yk9eYOqb4PDQvVWrmyazxQ4ORQ/qC0s4l23c=
 github.com/jmoiron/sqlx v1.2.0 h1:41Ip0zITnmWNR/vHV+S4m+VoUivnWY5E4OJfLZjCJMA=
 github.com/jmoiron/sqlx v1.2.0/go.mod h1:1FEQNm3xlJgrMD+FBdI9+xvCksHtbpVBBw5dYhBSsks=
 github.com/json-iterator/go v1.1.5 h1:gL2yXlmiIo4+t+y32d4WGwOjKGYcGOuyrg46vadswDE=
@@ -111,6 +116,7 @@ github.com/modern-go/reflect2 v1.0.1 h1:9f412s+6RmYXLWZSEzVVgPGK7C2PphHj5RJrvfx9
 github.com/modern-go/reflect2 v1.0.1/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3RllmbCylyMrvgv0=
 github.com/pelletier/go-toml v1.2.0 h1:T5zMGML61Wp+FlcbWjRDT7yAxhJNAiPPLOFECq181zc=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=
+github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.8.1 h1:iURUrRGxPUNPdy5/HRSm+Yj6okJ6UtLINN0Q9M4+h3I=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
